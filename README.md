@@ -1,1 +1,3 @@
 # exoplanet-detection-bias
+How has the kind of exoplanet we can detect changed over time, and how much of the population we see is just detection bias?
+Using the NASA Exoplanet Archive.
