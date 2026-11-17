@@ -16,7 +16,7 @@ COLUMNS = [
     "pl_name", "hostname", "discoverymethod", "disc_year", "disc_facility",
     "pl_orbper", #orbital period, days
     "pl_orbsmax", #semi major axis, AU
-    "pl_rade", #radius, Earth radii
+    "pl_rade", #radius, earth radii
     "pl_radeerr1", "pl_radeerr2", #upper/lower radius uncertainty
     "pl_bmasse", #mass, earth masses
     "sy_dist", #distance, parsecs

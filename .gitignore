@@ -221,3 +221,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Generated database
+data/exoplanets.db
+
+# Raw data
+data/raw
