@@ -20,23 +20,30 @@ def load_raw(path: str = RAW_PATH) -> pd.DataFrame:
 def clean(df: pd.DataFrame) -> pd.DataFrame:
     df = df.copy()
 
-    #row per planet
+    # row per planet
     df = df.drop_duplicates(subset="pl_name")
 
-    #tidy text cols
+    # tidy text cols
     for col in TEXT_COLS:
         df[col] = df[col].str.strip()
 
 
-    #force numeric cols to numbers
+    # force numeric cols to numbers
     for col in NUMERIC_COLS:
         df[col] = pd.to_numeric(df[col], errors="coerce")
 
-    #convert to integer type which allows missing values
+    # convert to integer type which allows missing values
     df["disc_year"] = df["disc_year"].astype("Int64")
 
-    #impossible values removed
+    # impossible values removed
     for col in MUST_BE_POSITIVE:
         df.loc[df[col] <= 0, col] = np.nan
+
+    # mass provenance flags (ie finds estimated masses)
+    df["mass_estimated"] = df["pl_bmassprov"].eq("M-R relationship")
+    df["mass_is_lower_limit"] = df["pl_bmassprov"].eq("Msini")
+
+    #replace estimated masses with NaN
+    df["pl_bmasse_measured"] = df["pl_bmasse"].where(~df["mass_estimated"])
 
     return df
