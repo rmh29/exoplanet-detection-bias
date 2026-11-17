@@ -9,3 +9,7 @@ The data comes from the [Nasa Exoplanet Archive](https://exoplanetarchive.ipac.c
 ## Data  
 
 The data cleaning process removes duplicates, converts types (numerical to integer), and removes physically impossible values. Rows with missing values are deliberately kept.
+
+## Limitations
+
+The archive's composite table reports a mass for almost every planet, but about 47% of all masses (and 63% for transit planets) are estimated from radius rather than measured. I treat these as missing in all mass-based analysis.
