@@ -1,8 +1,10 @@
 # exoplanet-detection-bias
 How has the kind of exoplanet we can detect changed over time, and how much of the population we see is just detection bias?  
 
-This project uses the NASA Exoplanet Archive to analyse exoplanet detection over time.  
 
+## Getting the data
+
+The data comes from the [Nasa Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/) and isn't stored in this repo. To download it and set it up, clone the repo and then in a virtual environment use python src/download_data.py and python src/load_db.py. This creates 'data/raw/exoplanets.csv' and an SQLite database at 'data/exoplanets.db'
 
 ## Data  
 
