@@ -14,12 +14,13 @@ OUT_PATH = Path("data/raw/exoplanets.csv")
 
 COLUMNS = [
     "pl_name", "hostname", "discoverymethod", "disc_year", "disc_facility",
-    "pl_orbper", #orbital period, days
-    "pl_orbsmax", #semi major axis, AU
-    "pl_rade", #radius, earth radii
-    "pl_radeerr1", "pl_radeerr2", #upper/lower radius uncertainty
-    "pl_bmasse", #mass, earth masses
-    "sy_dist", #distance, parsecs
+    "pl_orbper", # orbital period, days
+    "pl_orbsmax", # semi major axis, AU
+    "pl_rade", # radius, earth radii
+    "pl_radeerr1", "pl_radeerr2", # upper/lower radius uncertainty
+    "pl_bmasse", # mass, earth masses
+    "pl_bmassprov", #mass type: true or minimum (M sin i)
+    "sy_dist", # distance, parsecs
 ]
 
 def download_exoplanets() -> None:
@@ -31,3 +32,7 @@ def download_exoplanets() -> None:
     OUT_PATH.write_text(response.text)
     n_planets = len(response.text.splitlines()) - 1 #minus header row
     print(f"Saved {n_planets} planets to {OUT_PATH}")
+
+
+if __name__ == "__main__":
+    download_exoplanets()
