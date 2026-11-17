@@ -7,7 +7,7 @@ import pandas as pd
 
 RAW_PATH = "data/raw/exoplanets.csv"
 
-TEXT_COLS = ["pl_name", "hostname", "discoverymethod", "disc_facility"]
+TEXT_COLS = ["pl_name", "hostname", "discoverymethod", "disc_facility", "pl_bmassprov"]
 NUMERIC_COLS = ["pl_orbper", "pl_orbsmax", "pl_rade",
                 "pl_radeerr1", "pl_radeerr2", "pl_bmasse", "sy_dist"]
 
