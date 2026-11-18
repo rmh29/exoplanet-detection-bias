@@ -46,4 +46,9 @@ def clean(df: pd.DataFrame) -> pd.DataFrame:
     #replace estimated masses with NaN
     df["pl_bmasse_measured"] = df["pl_bmasse"].where(~df["mass_estimated"])
 
+    #radii for non-transit planets are mostly estimates not measurements
+    #so only keep radii from transit detections
+    df["pl_rade_measured"] = df["pl_rade"].where(df["discoverymethod"] == "Transit")
+    
+
     return df
