@@ -12,4 +12,4 @@ The data cleaning process removes duplicates, converts types (numerical to integ
 
 ## Limitations
 
-The archive's composite table reports a mass for almost every planet, but about 47% of all masses (and 63% for transit planets) are estimated from radius rather than measured. I treat these as missing in all mass-based analysis.
+The archive's composite table reports a mass for almost every planet, but about 47% of all masses (and 63% for transit planets) are estimated from radius rather than measured. I treat these as missing in all mass-based analysis. The radii of planets not detected by transits are mostly obtained from an empirical mass-radius relationship and are not measurements. Therefore for radius-based analysis, I look at only transit-detected planets.
